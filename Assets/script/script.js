@@ -20,5 +20,13 @@ $(function () {
     // attribute of each time-block be used to do this?
     //
     // TODO: Add code to display the current date in the header of the page.
+    let date = dayjs().format('d, MMMM, DD')
+    console.log(date)
+    let calender = $('#currentDay');
+    calender.text(date)
+
+    let currentHour = dayjs().hour()
+    console.log(currentHour)
+    
   });
   
