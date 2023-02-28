@@ -55,10 +55,12 @@ $(function () {
     }
     )
 
-        let scedule = localStorage.getItem('');
+        let scedule = localStorage.getItem();
+        let timeSlot = $('#timeslot');
+        timeSlot.textcontent = scedule;
 
-        $( '.savebtn' ).click(function() {
-          alert( "Handler for .click() called." );
+        $('.savebtn').click(function() {
+          localStorage.setItem()
         });  
 
   });
