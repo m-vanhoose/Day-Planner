@@ -40,30 +40,25 @@ $(function () {
       let sixteen = $('#hour-16')
       let seventeen = $('#hour-17')
       
-      nine = 9
-      ten = 10
-      eleven = 11
-      twelve = 12
-      thirteen = 13
-      fourteen = 14
-      fifteen = 15
-      sixteen = 16
-      seventeen = 17
+      let hourCount = [9,10,11,12,13,14,15,16,17]
       
       let timeOfDay = [nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen]
 
       let timezone = $('#timezone')
 
       for (let i=0; i < timeOfDay.length; i ++)  {
-        if (i = currentHour) {
-          timezone.attr('class', 'row time-block present')
-        }else if (i < currentHour) {
-          timezone.attr('class', 'row time-block past')
+        if (hourCount[i] == currentHour) {
+          timezone.attr('class', 'present')
+        }else if (hourCount[i] < currentHour) {
+          timezone.attr('class', 'past')
         }else {
-          timezone.attr('class', 'row time-block future')
+          timezone.attr('class', 'future')
         }
       }
     })
 
   });
   
+  // $(hoursArray[i]).removeClass("future");
+  //     $(hoursArray[i]).removeClass("present");
+  //     $(hoursArray[i]).addClass("past");
