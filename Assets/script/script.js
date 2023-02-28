@@ -20,45 +20,45 @@ $(function () {
     // attribute of each time-block be used to do this?
     //
     // TODO: Add code to display the current date in the header of the page.
-    let date = dayjs().format('dddd, MMMM, DD')
-    console.log(date)
+    let date = dayjs().format('dddd, MMMM, DD');
+    console.log(date);
     let calender = $('#currentDay');
-    calender.text(date)
-
-    let currentHour = dayjs().hour()
-    console.log(currentHour)
+    calender.text(date);
+    let currentHour = dayjs().hour();
+    console.log(currentHour);
 
     $(function () {
       
-      let nine = $('#hour-9')
-      let ten = $('#hour-10')
-      let eleven = $('#hour-11')
-      let twelve = $('#hour-12')
-      let thirteen = $('#hour-13')
-      let fourteen = $('#hour-14')
-      let fifteen = $('#hour-15')
-      let sixteen = $('#hour-16')
-      let seventeen = $('#hour-17')
+      let nine = $('#hour-9');
+      let ten = $('#hour-10');
+      let eleven = $('#hour-11');
+      let twelve = $('#hour-12');
+      let thirteen = $('#hour-13');
+      let fourteen = $('#hour-14');
+      let fifteen = $('#hour-15');
+      let sixteen = $('#hour-16');
+      let seventeen = $('#hour-17');
       
-      let hourCount = [9,10,11,12,13,14,15,16,17]
+      let hourCount = [9,10,11,12,13,14,15,16,17];
       
-      let timeOfDay = [nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen]
-
-      let timezone = $('#timezone')
+      let timeOfDay = [nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen];
 
       for (let i=0; i < timeOfDay.length; i ++)  {
         if (hourCount[i] == currentHour) {
-          timezone.attr('class', 'present')
+          timeOfDay[i].attr('class', 'row time-block present');
         }else if (hourCount[i] < currentHour) {
-          timezone.attr('class', 'past')
+          timeOfDay[i].attr('class', 'row time-block past');
         }else {
-          timezone.attr('class', 'future')
+          timeOfDay[i].attr('class', 'row time-block future');
         }
       }
-    })
+    }
+    )
+
+        let scedule = localStorage.getItem('');
+
+        $( '.savebtn' ).click(function() {
+          alert( "Handler for .click() called." );
+        });  
 
   });
-  
-  // $(hoursArray[i]).removeClass("future");
-  //     $(hoursArray[i]).removeClass("present");
-  //     $(hoursArray[i]).addClass("past");
